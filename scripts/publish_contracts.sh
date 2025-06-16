@@ -29,8 +29,7 @@ docker run --rm \
   -e PACT_BROKER_PASSWORD="$BROKER_PASSWORD" \
   "$DOCKER_IMAGE" \
   publish /pacts \
-    --consumer-app-version="$CI_COMMIT_SHA" \
-    --branch="$CI_COMMIT_REF_NAME" \
-    ${CI_COMMIT_TAG:+--tag "$CI_COMMIT_TAG"}  # Опционально для тегов
+    --consumer-app-version="GITHUB_SHA" \
+    --branch="GITHUB_REF_NAME" \
 
 echo "✅ Contracts published successfully"
