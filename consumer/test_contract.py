@@ -4,7 +4,7 @@ from pact import Consumer, Provider
 
 from client import UserClient
 
-pact = Consumer("UserServiceConsumer").has_pact_with(Provider("UserServiceProvider"))
+pact = Consumer("UserServiceConsumer").has_pact_with(Provider("UserServiceProvider"), pact_dir="./pacts")
 pact.start_service()
 atexit.register(pact.stop_service)
 
@@ -25,6 +25,3 @@ def test_get_user():
     with pact:
         user = client.get_user(1)
         assert user == expected
-
-    #pact_publisher = PactPublisher(broker_url="http://85.198.80.162:9292", username="admin", password="password")
-    #pact_publisher.publish_contract(pact_file_path=".")
