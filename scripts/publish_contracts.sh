@@ -29,7 +29,7 @@ docker run --rm \
   -e PACT_BROKER_PASSWORD="$BROKER_PASSWORD" \
   "$DOCKER_IMAGE" \
   publish /pacts \
-    --consumer-app-version="GITHUB_SHA" \
-    --branch="GITHUB_REF_NAME" \
+    --consumer-app-version="$GITHUB_SHA" \
+    --branch="$GITHUB_REF_NAME" \
 
 echo "✅ Contracts published successfully"
