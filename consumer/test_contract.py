@@ -10,13 +10,13 @@ atexit.register(pact.stop_service)
 
 
 def test_get_user():
-    expected = {"id": 1, "name": "John Doe"}
+    expected = {"id": 1, "name": "John Doe", "title": "head"}
 
     # Define the interaction
     (
         pact.upon_receiving("a request for user with ID 1")
            .given("User with ID 2 exists")
-           .with_request("GET", "/users/1")
+           .with_request("GET", "/users/2")
            .will_respond_with(200, body=expected)
     )
 
