@@ -15,8 +15,8 @@ def test_get_user():
     # Define the interaction
     (
         pact.upon_receiving("a request for user with ID 1")
-           .given("User with ID 2 exists")
-           .with_request("GET", "/users/2")
+           .given("User with ID 1 exists")
+           .with_request("GET", "/users/1")
            .will_respond_with(200, body=expected)
     )
 
