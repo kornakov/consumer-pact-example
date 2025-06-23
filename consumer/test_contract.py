@@ -8,9 +8,9 @@ pact = Consumer("UserServiceConsumer").has_pact_with(Provider("UserServiceProvid
 pact.start_service()
 atexit.register(pact.stop_service)
 
-
+#The new version
 def test_get_user():
-    expected = {"id": 1, "name": "John Doe", "title6": "qa"}
+    expected = {"id": 1, "name": "John Doe"}
 
     # Define the interaction
     (
