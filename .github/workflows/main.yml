@@ -38,3 +38,10 @@ jobs:
         run: |
           chmod +x ./scripts/publish_contracts.sh
           ./scripts/publish_contracts.sh
+          
+      - name: Can I Deploy?
+        run: |
+            pact-broker can-i-deploy \
+            --pacticipant "UserServiceConsumer" \
+            --version "$GITHUB_SHA" \
+            --broker-base-url "${{ secrets.PACT_BROKER_URL }}"
