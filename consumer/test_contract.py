@@ -10,7 +10,7 @@ atexit.register(pact.stop_service)
 
 
 def test_get_user():
-    expected = {"id": 1, "name": "John Doe", "title4": "qa"}
+    expected = {"id": 1, "name": "John Doe", "title5": "qa"}
 
     # Define the interaction
     (
