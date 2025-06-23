@@ -39,6 +39,9 @@ jobs:
           chmod +x ./scripts/publish_contracts.sh
           ./scripts/publish_contracts.sh
           
+      - name: Install Pact CLI
+        run: npm install -g @pact-foundation/pact-cli
+            
       - name: Can I Deploy?
         run: |
             pact-broker can-i-deploy \
